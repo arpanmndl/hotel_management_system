@@ -1,7 +1,8 @@
 from tkinter import * # for gui
 from PIL import Image, ImageTk # we need to install pillow to import PIL - pip install pillow  ## for setting images inside the gui
 
-from customer import Customer_window
+from customer import CustomerWindow
+from room import RoomWindow
 
 class HotelManagementSystem:
 
@@ -55,7 +56,7 @@ class HotelManagementSystem:
         cust_btn = Button(button_frame, text="Customer", width=20, command=self.customer_details, font=('times new roman', 14, 'bold'), bg='black', fg='gold', bd=0, cursor="hand2")
         cust_btn.grid(row=0, column=0, pady=1)
 
-        room_btn = Button(button_frame, text="Room", width=20, font=('times new roman', 14, 'bold'), bg='black',
+        room_btn = Button(button_frame, text="Room", command=self.room_booking, width=20, font=('times new roman', 14, 'bold'), bg='black',
                           fg='gold', bd=0, cursor="hand2")
         room_btn.grid(row=1, column=0, pady=1)
 
@@ -104,10 +105,17 @@ class HotelManagementSystem:
         lblimg5 = Label(main_frame, image=self.img5, bd=4, relief=RIDGE)
         lblimg5.place(x=0, y=410, width=230, height=200)
 
+
     # creating a method for customer button
     def customer_details(self):
         self.new_window = Toplevel(self.root)
         self.app = Customer_window(self.new_window)
+
+
+    # creating a method for room button
+    def room_booking(self):
+        self.new_window = Toplevel(self.root)
+        self.app = RoomWindow(self.new_window)
 
 
 # doubt: why is main function used ?

@@ -9,7 +9,7 @@ from tkinter import messagebox
 
 
 
-class Customer_window:
+class CustomerWindow:
 
     def __init__(self, root):
         # doubt: what is the use of root?
@@ -491,5 +491,5 @@ class Customer_window:
 
 if __name__ == "__main__":
     root = Tk()
-    obj = Customer_window(root)
+    obj = CustomerWindow(root)
     root.mainloop()
